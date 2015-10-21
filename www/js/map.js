@@ -14,3 +14,12 @@ $( document ).on( "pagebeforeshow", ".pageload", function() {
     // $('#footer-nav-item').html(arr_str.join(''))).listview('refresh');
 
 });
+
+
+$('#map-screen').on('click','.showAll',function(e) { 
+
+
+        localStorage.removeItem('selected-branch');
+
+    window.location = "map.html";
+});
