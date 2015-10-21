@@ -1,20 +1,44 @@
 
 $( document ).on( "pagebeforeshow", "#map-screen", function() {
+   
+   var selectedBranch = '';
+   var selectedBranchPosition = '14.677067,121.031793';
+    if(localStorage.getItem("selected-branch") != null)
+    {
+        selectedBranch = localStorage.getItem("selected-branch");
+        selectedBranchPosition = localStorage.getItem("selected-branch-position");
+    }
+
+
     jgmap.add(function() {           
-        $('#map_canvas').gmap({'center': '14.677067,121.031793', 'zoom': 12, 'disableDefaultUI':true, }).bind('init', function(evt, map) { 
+        $('#map_canvas').gmap({'center': selectedBranchPosition, 'zoom': 12, 'disableDefaultUI':true, }).bind('init', function(evt, map) { 
 
-            $('#map_canvas').gmap('addControl', 'radios', google.maps.ControlPosition.TOP_LEFT);
+            // $('#map_canvas').gmap('addControl', 'radios', google.maps.ControlPosition.TOP_LEFT);
 
 
-            $.each(tags, function(i, tag) {
-                $('#radios').append(('<label style="margin-right:5px;display:block;"><input type="checkbox" style="margin-right:3px" value="{0}"/>{1}</label>').format(tag, tag));
-            });
+            // $.each(tags, function(i, tag) {
+            //     $('#radios').append(('<label style="margin-right:5px;display:block;"><input type="checkbox" style="margin-right:3px" value="{0}"/>{1}</label>').format(tag, tag));
+            // });
 
 
             $.each(markers, function(i, marker) {
-                $('#map_canvas').gmap('addMarker', marker).click(function() {
-                    $('#map_canvas').gmap('openInfoWindow', {'content': this.title}, this);
-                });
+                if(selectedBranch != '')
+                {
+
+                    if(marker['title'] == selectedBranch)
+                    {
+                        $('#map_canvas').gmap('addMarker', marker).click(function() {
+                            $('#map_canvas').gmap('openInfoWindow', {'content': this.title}, this);
+                        });
+                    }
+                }
+                else
+                {
+                    $('#map_canvas').gmap('addMarker', marker).click(function() {
+                        $('#map_canvas').gmap('openInfoWindow', {'content': this.title}, this);
+                    }); 
+                }
+
             });
 
 
