@@ -6,7 +6,7 @@
         <meta name="msapplication-tap-highlight" content="no" />
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
-        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
         <link rel="stylesheet" type="text/css" href="css/vendor/jquery.mobile-1.4.5.css" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
 
@@ -21,17 +21,14 @@
         <div data-role="page" id="map-screen">
             <div data-role="header" id="applicationHeader" data-theme="b" data-position="fixed" data-id="navStay">
                <h1 class="ui-title" role="heading" aria-level="1">Mobile</h1>
+               <a href="#" data-ajax="false" class="showAll ui-btn-right ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-right ui-icon-grid">Show All</a>
             </div>
-            <div role="main" class="ui-content" data-position="fixed">
+            <div role="main" class="" data-position="fixed">
          
-                <div class="container_16">
-                    <article class="grid_16">
-                        <div class="item rounded dark">
-                            <div id="map_canvas" class="map rounded"></div>
-                        </div>
-                        <a href="#" class="showAll" data-ajax="false">Show All</a>
-                    </article>
-                </div>  
+
+                <div id="map_canvas" class="map rounded"></div>
+
+     
 
             </div>
             <div data-role="footer" style="overflow:hidden;" data-position="fixed">
