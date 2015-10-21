@@ -16,6 +16,28 @@
 
 
 
+.ui-bar-a{
+	border:0px;
+	background:none;
+}
+.dashboard-item a {
+	padding: 25px 10px;
+}
+.dashboard-item a i{
+	font-size: 1.8em;
+	display: block;
+	padding-bottom: 10px;
+}
+.footer-navbar-item i{
+	font-size: 1.8em;
+	padding-bottom: 5px;
+
+}
+
+.footer-navbar-item label{
+	font-size: 1em;
+
+}
 
 .sub-item a{
     font-size: 14px;
