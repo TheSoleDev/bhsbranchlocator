@@ -37,8 +37,7 @@ $( document ).on( "pagebeforeshow", "#branch-screen", function() {
                     $.each(markers, function(i, marker) {
                 
                         if($.inArray( tag, marker['tags']) > -1){
-                            arr_str.push('<li class="sub-item" data-filtertext="'+tag + ' ' + marker['title'] + '"><a href="#">'+marker['title']+'</a></li>');
-
+                            arr_str.push('<li class="sub-item" data-filtertext="'+tag + ' ' + marker['title'] + '"><a href="#" class="showmap" data-position="'+marker['position']+'" data-branch="'+marker['title']+'">'+marker['title']+'</a></li>');
                         }
                         
                     });
@@ -50,4 +49,17 @@ $( document ).on( "pagebeforeshow", "#branch-screen", function() {
 
     $('#brachlist').append(arr_str.join('')).trigger('create');
 
+});
+
+$('#branch-screen').on('click','.showmap',function(e) { 
+
+    if(localStorage.getItem("selected-branch") != '')
+    {
+        localStorage.removeItem('selected-branch');
+        localStorage.removeItem('selected-branch-position');
+    }
+
+    localStorage.setItem("selected-branch", $(this).data('branch'));
+    localStorage.setItem("selected-branch-position", $(this).data('position'));
+    window.location = "map.html";
 });
