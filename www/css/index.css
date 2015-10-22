@@ -39,7 +39,11 @@
 
 }
 
+.tag-item h3 a{
+	line-height: 2;
+}
 .sub-item a{
+	line-height: 2;
     font-size: 14px;
 }
 

@@ -30,7 +30,7 @@ $( document ).on( "pagebeforeshow", "#branch-screen", function() {
                 
             });
 
-            arr_str.push('<div data-role="collapsible" data-filtertext="'+tag + ' ' + filtertext + '">');
+            arr_str.push('<div data-role="collapsible" class="tag-item" data-filtertext="'+tag + ' ' + filtertext + '">');
                 arr_str.push('<h3>'+tag+'</h3>');
                 arr_str.push('<ul data-role="listview" data-inset="false">');
 
@@ -57,9 +57,11 @@ $('#branch-screen').on('click','.showmap',function(e) {
     {
         localStorage.removeItem('selected-branch');
         localStorage.removeItem('selected-branch-position');
+        localStorage.removeItem('reference-page');
     }
 
     localStorage.setItem("selected-branch", $(this).data('branch'));
     localStorage.setItem("selected-branch-position", $(this).data('position'));
+    localStorage.setItem("reference-page", 'branch.html');    
     window.location = "map.html";
 });

@@ -17,9 +17,17 @@ $( document ).on( "pagebeforeshow", ".pageload", function() {
 
 
 $('#map-screen').on('click','.showAll',function(e) { 
-
-
-        localStorage.removeItem('selected-branch');
-
+    localStorage.removeItem('selected-branch');
     window.location = "map.html";
+});
+
+$('#map-screen').on('click','.btn-back',function(e) { 
+    
+    var backLink = 'index.html';
+    if(localStorage.getItem("reference-page") != null)
+    {    
+        backLink = localStorage.getItem("reference-page");
+        localStorage.removeItem('reference-page');
+    }
+    window.location = backLink;
 });
