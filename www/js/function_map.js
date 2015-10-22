@@ -21,33 +21,124 @@ $( document ).on( "pagebeforeshow", "#map-screen", function() {
             // });
 
 
-            $.each(markers, function(i, marker) {
-                if(selectedBranch != '')
-                {
+            // $.each(markers, function(i, marker) {
+            //     if(selectedBranch != '')
+            //     {
 
-                    if(marker['title'] == selectedBranch)
-                    {
-                        $('#map_canvas').gmap('addMarker', marker).click(function() {
-                            $('#map_canvas').gmap('openInfoWindow', {'content': this.title}, this);
-                        });
-                    }
-                }
-                else
-                {
-                    $('#map_canvas').gmap('addMarker', marker).click(function() {
-                        $('#map_canvas').gmap('openInfoWindow', {'content': this.title}, this);
-                    }); 
-                }
+            //         if(marker['title'] == selectedBranch)
+            //         {
+            //             $('#map_canvas').gmap('addMarker', marker).click(function() {
+            //                 $('#map_canvas').gmap('openInfoWindow', {'content': this.title}, this);
+            //             });
+            //         }
+            //     }
+            //     else
+            //     {
+            //         $('#map_canvas').gmap('addMarker', marker).click(function() {
+            //             $('#map_canvas').gmap('openInfoWindow', {'content': this.title}, this);
+            //         }); 
+            //     }
 
-            });
+            // });
 
 
         });
     }).load();
 
 
+
+    var currentLoc = '';
+    // Check for geolocation support
+    if (navigator.geolocation) {
+        // Use method getCurrentPosition to get coordinates
+        navigator.geolocation.getCurrentPosition(function (position) {
+            // Access them accordingly
+            
+            currentLoc = new google.maps.LatLng(position.coords.latitude,position.coords.longitude)
+            $('#map_canvas').gmap('addMarker', { 'position':currentLoc} );
+            $('#map_canvas').gmap({'center': position.coords.latitude + ", " + position.coords.longitude, 'zoom': 12, 'disableDefaultUI':true, });
+            $('#map_canvas').gmap('get','map').panTo(currentLoc);
+
+        });
+    }
+
+    // THIS IS FOR THE LOC SEARCH
+        // $('#map_canvas').gmap('search', { 'address': 'quezon city, philippines' }, function(results,isFound) {
+        //     if (isFound) {
+        //         console.log(results[0].geometry.location);
+        //         // $('#map_canvas').gmap('get','map').panTo(results[0].geometry.location);
+                
+        //         $('#map_canvas').gmap('addMarker', { 'position':results[0].geometry.location} );
+
+        //     }
+        // });
+
+
 });
 
+
+
+
+
+
+// $(document).ready(function () {
+
+//     var distanceObj = [],
+//         i = 0;
+
+
+
+//     $.each(markers, function(i, marker) {
+
+//         var str = marker['position'];
+//         var res = str.split(",");
+
+//         console.log(res[0] + '---' + res[1])
+//     });
+
+
+
+
+//     $.each(myData, function (a, b) {
+//         distanceObj[i] = { distance: hesapla(9.9608999, 49.7222842, b.Position.Longitude, b.Position.Latitude), location: a };
+//         ++i;
+//     });
+
+//     distanceObj.sort(function(a,b) {
+//         return parseInt(a.distance) - parseInt(b.distance)
+//     });
+
+//     $.each(distanceObj, function(a, b) {
+//         //$('#groups').append('<li>' + b.location + ': ' + b.distance + 'm</li>');
+//         console.log('<li>' + b.location + ': ' + b.distance + 'm</li>');
+//     });
+    
+//     console.log(distanceObj);
+
+//     function hesapla(meineLongitude, meineLatitude, long1, lat1) {
+//         erdRadius = 6371;
+
+//         meineLongitude = meineLongitude * (Math.PI / 180);
+//         meineLatitude = meineLatitude * (Math.PI / 180);
+//         long1 = long1 * (Math.PI / 180);
+//         lat1 = lat1 * (Math.PI / 180);
+
+//         x0 = meineLongitude * erdRadius * Math.cos(meineLatitude);
+//         y0 = meineLatitude * erdRadius;
+
+//         x1 = long1 * erdRadius * Math.cos(lat1);
+//         y1 = lat1 * erdRadius;
+
+//         dx = x0 - x1;
+//         dy = y0 - y1;
+
+//         d = Math.sqrt((dx * dx) + (dy * dy));
+
+
+//         return Math.round(d * 1000);
+//     };
+
+// });
 
 
 $('#map-screen').on('click','input:checkbox',function(e) { 
