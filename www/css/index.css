@@ -1,4 +1,66 @@
+.page-title{
+	margin: 0 10% !important;
+	font-size: 1em !important;
+}
+.page-bg{
+	background: url('../img/bg-medium-screen.png') #95e705 top no-repeat;
+	height: 100%;
+}
+.dashboard-title{
+	margin: 0 10% !important;
+}
+.dashboard-footer{
+	padding: 5px;
+	text-align: center;
+	font-size: 12px;
+	overflow:hidden;
+	color: #ffffff!important;
 
+	background-color: #1d1d1d !important;
+    border-color: #1b1b1b !important;
+        text-shadow: none!important;    font-weight: bold;	
+}
+.footer-navbar-item.ui-btn-active{
+	background-color: #1d1d1d !important;
+    border-color: #1b1b1b !important;
+}
+.logo-container{
+margin:0 auto;
+width: 30%;
+}
+#applicationHeader{
+	    background-color: #84cf00 ;
+    border-color: #517f00 ;
+}
+
+
+.branch-info{
+	margin: 0px;
+	padding:0px;
+	list-style: none !important;
+
+}
+
+.branch-info li{
+	margin: 0px;
+	padding:0px;
+
+
+}
+.branch-info li.main{
+	margin: 10px 0 15px 0;
+	border-bottom: 1px solid #cccccc;
+}
+
+.branch-info li label{
+	font-size: 14px;
+	font-weight: bold;
+}
+.branch-info li div.info{
+	padding-left: 15px;
+	font-size: 14px;
+	white-space:pre-wrap;
+}
 
 /** General */
 .content { padding:1.5em; margin:0 0 1.5em; }

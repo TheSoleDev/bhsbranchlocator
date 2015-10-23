@@ -51,6 +51,7 @@ $( document ).on( "pagebeforeshow", "#branch-screen", function() {
 
 });
 
+
 $('#branch-screen').on('click','.showmap',function(e) { 
 
     if(localStorage.getItem("selected-branch") != '')
@@ -63,5 +64,20 @@ $('#branch-screen').on('click','.showmap',function(e) {
     localStorage.setItem("selected-branch", $(this).data('branch'));
     localStorage.setItem("selected-branch-position", $(this).data('position'));
     localStorage.setItem("reference-page", 'branch.html');    
-    window.location = "map.html";
+    window.location = "#branch-info";
 });
+
+// $('#branch-screen').on('click','.showmap',function(e) { 
+
+//     if(localStorage.getItem("selected-branch") != '')
+//     {
+//         localStorage.removeItem('selected-branch');
+//         localStorage.removeItem('selected-branch-position');
+//         localStorage.removeItem('reference-page');
+//     }
+
+//     localStorage.setItem("selected-branch", $(this).data('branch'));
+//     localStorage.setItem("selected-branch-position", $(this).data('position'));
+//     localStorage.setItem("reference-page", 'branch.html');    
+//     window.location = "map.html";
+// });
