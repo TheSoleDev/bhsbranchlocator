@@ -48,21 +48,24 @@ $( document ).on( "pagebeforeshow", "#map-screen", function() {
             // });    
             // // [-] THIS IS FOR THE NEARBY FEATURES
             
-            $.each(markers, function(i, marker) {
+            var arr_option = [];
+            $.each(branch, function(key, value) {
+
+                arr_option = {'icon': img_marker, 'tags':Array(value.province), 'bound':true, 'position': value.lat + ',' + value.long, 'title': value.branch_name};
 
                 if(selectedBranch != '')
                 {
 
-                    if(marker['title'] == selectedBranch)
+                    if(value.branch_name == selectedBranch)
                     {
-                        $('#map_canvas').gmap('addMarker', marker).click(function() {
+                        $('#map_canvas').gmap('addMarker', arr_option).click(function() {
                             $('#map_canvas').gmap('openInfoWindow', {'content': this.title}, this);
-                        });
+                        }); 
                     }
                 }
                 else
                 {
-                    $('#map_canvas').gmap('addMarker', marker).click(function() {
+                    $('#map_canvas').gmap('addMarker', arr_option).click(function() {
                         $('#map_canvas').gmap('openInfoWindow', {'content': this.title}, this);
                     }); 
                 }

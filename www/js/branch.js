@@ -16,34 +16,32 @@ $( document ).on( "pagebeforeshow", "#branch-screen", function() {
 
 
 
-    $.each(tags, function(i, tag) {
+    $.each(province, function(i, tag) {
 
         var filtertext = '';
 
-            $.each(markers, function(i, marker) {
+        $.each(branch, function(key, value) {
+    
+            if($.inArray( tag, value.province) > -1){
+               filtertext = filtertext + ' ' + value.branch_name;
+            }
 
-        
-                if($.inArray( tag, marker['tags']) > -1){
-                   filtertext = filtertext + ' ' + marker['title'];
-                }
+        });
 
-                
-            });
+        arr_str.push('<div data-role="collapsible" class="tag-item" data-filtertext="'+tag + ' ' + filtertext + '">');
+            arr_str.push('<h3>'+tag+'</h3>');
+            arr_str.push('<ul data-role="listview" data-inset="false">');
 
-            arr_str.push('<div data-role="collapsible" class="tag-item" data-filtertext="'+tag + ' ' + filtertext + '">');
-                arr_str.push('<h3>'+tag+'</h3>');
-                arr_str.push('<ul data-role="listview" data-inset="false">');
+                $.each(branch, function(key, value) {
 
-                    $.each(markers, function(i, marker) {
-                
-                        if($.inArray( tag, marker['tags']) > -1){
-                            arr_str.push('<li class="sub-item" data-filtertext="'+tag + ' ' + marker['title'] + '"><a href="#" class="showmap" data-position="'+marker['position']+'" data-branch="'+marker['title']+'">'+marker['title']+'</a></li>');
-                        }
-                        
-                    });
+                    if( tag == value.province){
+                        arr_str.push('<li class="sub-item" data-filtertext="'+tag + ' ' + value.branch_name + '"><a href="#" class="showmap" data-position="'+value.position+'" data-branch="'+value.branch_name+'">'+value.branch_name+'</a></li>');
+                    }
+                    
+                });
 
-                arr_str.push('</ul>');
-            arr_str.push('</div>');
+            arr_str.push('</ul>');
+        arr_str.push('</div>');
 
     });
 

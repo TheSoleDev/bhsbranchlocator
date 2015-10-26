@@ -3,7 +3,7 @@
 	font-size: 1em !important;
 }
 .page-bg{
-	background: url('../img/bg-medium-screen.png') #95e705 top no-repeat;
+	/*background: url('../img/bg-medium-screen.png') #95e705 top no-repeat;*/
 	height: 100%;
 }
 .dashboard-title{
@@ -28,11 +28,11 @@
 margin:0 auto;
 width: 30%;
 }
-#applicationHeader{
+/*#applicationHeader{
 	    background-color: #84cf00 ;
     border-color: #517f00 ;
 }
-
+*/
 
 .branch-info{
 	margin: 0px;
