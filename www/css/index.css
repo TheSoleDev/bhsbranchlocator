@@ -34,29 +34,29 @@ width: 30%;
 }
 */
 
-.branch-info{
+#branch-details{
 	margin: 0px;
 	padding:0px;
 	list-style: none !important;
 
 }
 
-.branch-info li{
+#branch-details li{
 	margin: 0px;
 	padding:0px;
 
 
 }
-.branch-info li.main{
+#branch-details li.main{
 	margin: 10px 0 15px 0;
 	border-bottom: 1px solid #cccccc;
 }
 
-.branch-info li label{
+#branch-details li label{
 	font-size: 14px;
 	font-weight: bold;
 }
-.branch-info li div.info{
+#branch-details li div.info{
 	padding-left: 15px;
 	font-size: 14px;
 	white-space:pre-wrap;

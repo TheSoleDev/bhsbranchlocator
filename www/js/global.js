@@ -35,4 +35,15 @@ $( document ).on( "pagebeforeshow", ".pageload", function() {
 });
 
 
- 
+function getBranchDetailsById(id){
+	
+	var data = json_data.branch;
+
+	var result = data.filter(function (data) {
+	    return data.id == id;
+	});
+
+	return result[0];
+}
+
+//console.log(getBranchDetailsById('2').branch_name);

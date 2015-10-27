@@ -25,46 +25,38 @@
             </div>
             <div role="main" class="ui-content" data-position="fixed">
 
-                <form>
-                    <input data-type="search" id="searchForCollapsibleSetChildren">
-                </form>
-
-                <div data-role="collapsibleset" data-filter="true" data-children="> div, > div div ul li" data-inset="true" id="brachlist" data-input="#searchForCollapsibleSetChildren">
-                  
-                </div>
-
-            </div>
-            <div data-role="footer" style="overflow:hidden;" data-position="fixed">
-                <div data-role="navbar" id="footer-nav-item">
-                    <ul>
-                        <li><a href="branch.html" data-ajax="false" class="ui-btn-active footer-navbar-item"><i class="fa fa-building"></i><label>Branch</label></a></li>
-                        <li><a href="map.html" data-ajax="false" class="footer-navbar-item"><i class="fa fa-map-marker"></i><label>Map</label></a></li>
-                        <li><a href="promo.html" class="footer-navbar-item"><i class="fa fa-gift"></i><label>Promos</label></a></li>
-                        <li><a href="#" class="footer-navbar-item"><i class="fa fa-book"></i><label>Reserve</label></a></li>      
-                        <li><a href="#" class="footer-navbar-item"><i class="fa fa-bookmark"></i><label>Bookmark</label></a></li>
-                    </ul>
-                </div><!-- /navbar -->
-            </div><!-- /footer -->
-        </div>
-
-
-        <div data-role="page"  class="page-bg" id="branch-info">
-            <div data-role="header" id="applicationHeader" data-theme="b" data-position="fixed" data-id="navStay">
-               <a href="#branch-screen" data-ajax="false" class="ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-home">Back </a>                  
-               <h1 class="ui-title page-title" role="heading" aria-level="1">HELLO WORLD</h1>
-            </div>
-            <div role="main" class="ui-content" data-position="fixed">
-                <ul data-role="listview">
+                <ul data-role="listview" data-inset="true">
+                    <li data-role="list-divider">October<span class="ui-li-count">2</span></li>
                     <li>
-                        <ul id="branch-details">
-
-                        </ul>
+                        <a href="#">
+                        <img src="img/album-bb.jpg">
+                        <h2>Hello World</h2>
+                        <p>Broken Bells</p></a>
+                        <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a>
                     </li>
-                    <li><a href="map.html">View Map</a></li>
-                    <li><a href="promo.html">Promos</a></li>
-                    <li><a href="#">Add Reservation</a></li>
-                    <li><a href="#">Add to Bookmark</a></li>
-                    <li><a href="#">Send Feedback</a></li>
+                    <li><a href="index.html">
+                        <h2>Stephen Weber</h2>
+                        <p><strong>You've been invited to a meeting at Filament Group in Boston, MA</strong></p>
+                        <p>Hey Stephen, if you're available at 10am tomorrow, we've got a meeting with the jQuery team.</p>
+                        <p class="ui-li-aside"><strong>6:24</strong>PM</p>
+                        </a>
+                    </li>
+
+                    <li data-role="list-divider">October<span class="ui-li-count">2</span></li>
+                    <li>
+                        <a href="#">
+                        <img src="img/album-bb.jpg">
+                        <h2>Broken Bells</h2>
+                        <p>Broken Bells</p></a>
+                        <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a>
+                    </li>
+                    <li><a href="index.html">
+                        <h2>Stephen Weber</h2>
+                        <p><strong>You've been invited to a meeting at Filament Group in Boston, MA</strong></p>
+                        <p>Hey Stephen, if you're available at 10am tomorrow, we've got a meeting with the jQuery team.</p>
+                        <p class="ui-li-aside"><strong>6:24</strong>PM</p>
+                        </a>
+                    </li>
                 </ul>
 
             </div>
@@ -81,9 +73,11 @@
             </div><!-- /footer -->
         </div>
 
+
+
       
         <script type="text/javascript" src="js/global.js"></script>
-        <script type="text/javascript" src="js/branch.js"></script>       
+     
         <script type="text/javascript">
 
         </script>

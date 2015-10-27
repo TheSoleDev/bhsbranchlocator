@@ -35,7 +35,7 @@ $( document ).on( "pagebeforeshow", "#branch-screen", function() {
                 $.each(branch, function(key, value) {
 
                     if( tag == value.province){
-                        arr_str.push('<li class="sub-item" data-filtertext="'+tag + ' ' + value.branch_name + '"><a href="#" class="showmap" data-position="'+value.position+'" data-branch="'+value.branch_name+'">'+value.branch_name+'</a></li>');
+                        arr_str.push('<li class="sub-item" data-filtertext="'+tag + ' ' + value.branch_name + '"><a href="#" class="showmap" data-position="'+value.lat + ',' + value.long+'" data-branch="'+value.branch_name+'" data-id="'+value.id+'">'+value.branch_name+'</a></li>');
                     }
                     
                 });
@@ -50,6 +50,31 @@ $( document ).on( "pagebeforeshow", "#branch-screen", function() {
 });
 
 
+$( document ).on( "pagebeforeshow", "#branch-info", function() {
+  
+    var branch_id = localStorage.getItem("selected-branch-id");
+
+    if(branch_id == '' )
+    {
+        window.location = "#branch-screen";
+    }
+
+    var details = getBranchDetailsById(branch_id);
+
+    var arr_str = [];
+
+    if(details.branch_name != null)     arr_str.push('<li class="main"><label>'+details.branch_name+'</label></li>');
+    if(details.address != null)         arr_str.push('<li><label>Address:</label> <div class="info">'+details.address+'</div></li>');
+    if(details.tel_no_1 != null)        arr_str.push('<li><label>Telephone No.:</label> <div class="info">'+details.tel_no_1+'</div></li>');
+    if(details.mobile_no_1 != null)     arr_str.push('<li><label>Mobile No.:</label> <div class="info">'+details.mobile_no_1+'</div></li>');
+    if(details.email_add != null)       arr_str.push('<li><label>Email:</label> <div class="info">'+details.email_add+'</div></li>');
+    if(details.fb_url != null)          arr_str.push('<li><label>Facebook:</label> <div class="info">'+details.fb_url+'</div></li>');
+
+    $('#branch-details').html(arr_str.join(''));
+
+});
+
+
 $('#branch-screen').on('click','.showmap',function(e) { 
 
     if(localStorage.getItem("selected-branch") != '')
@@ -59,10 +84,13 @@ $('#branch-screen').on('click','.showmap',function(e) {
         localStorage.removeItem('reference-page');
     }
 
+    localStorage.setItem("selected-branch-id", $(this).data('id'));
     localStorage.setItem("selected-branch", $(this).data('branch'));
     localStorage.setItem("selected-branch-position", $(this).data('position'));
-    localStorage.setItem("reference-page", 'branch.html');    
+    localStorage.setItem("reference-page", 'branch.html');   
+    console.log('cccccccc' + localStorage.getItem("selected-branch"));
     window.location = "#branch-info";
+
 });
 
 // $('#branch-screen').on('click','.showmap',function(e) { 
