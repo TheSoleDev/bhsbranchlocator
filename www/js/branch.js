@@ -35,7 +35,10 @@ $( document ).on( "pagebeforeshow", "#branch-screen", function() {
                 $.each(branch, function(key, value) {
 
                     if( tag == value.province){
-                        arr_str.push('<li class="sub-item" data-filtertext="'+tag + ' ' + value.branch_name + '"><a href="#" class="showmap" data-position="'+value.lat + ',' + value.long+'" data-branch="'+value.branch_name+'" data-id="'+value.id+'">'+value.branch_name+'</a></li>');
+                        if(value.lat != null && value.long != null)
+                        {
+                            arr_str.push('<li class="sub-item" data-filtertext="'+tag + ' ' + value.branch_name + '"><a href="#" class="showmap" data-position="'+value.lat + ',' + value.long+'" data-branch="'+value.branch_name+'" data-id="'+value.id+'">'+value.branch_name+'</a></li>');
+                        }
                     }
                     
                 });
@@ -72,7 +75,29 @@ $( document ).on( "pagebeforeshow", "#branch-info", function() {
 
     $('#branch-details').html(arr_str.join(''));
 
+    var arr_str_photo = [];
+
+    var data_photo = json_data.branch_photo;
+
+    $.each(data_photo, function(key, value) {
+
+        if( value.branch_id == branch_id){
+            arr_str_photo.push('<a href="#popupPhotoLarge" class="showPopupPhoto" data-rel="popup" data-position-to="window" data-transition="fade"><img class="popphoto" src="'+value.photo_file+'" alt="Paris, France" style="width:30%"></a>');
+        }
+    });
+
+    $('#branch-photo-list').html(arr_str_photo.join(''));
+
 });
+
+
+$('#branch-info').on('click','.showPopupPhoto',function(e) { 
+
+    $("#img-large-photo").attr('src',$(this).find('img').attr('src'));
+
+});
+
+
 
 
 $('#branch-screen').on('click','.showmap',function(e) { 

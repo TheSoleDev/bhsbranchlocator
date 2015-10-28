@@ -59,6 +59,18 @@
                         <ul id="branch-details">
 
                         </ul>
+
+                        <h2>Photos</h2>
+                        
+                        <div id="branch-photo-list"> 
+                            <a href="#popupPhotoLarge" class="showPopupPhoto" data-rel="popup" data-position-to="window" data-transition="fade"><img class="popphoto" src="https://farm2.staticflickr.com/1043/5186867718_06b2e9e551_b.jpg" alt="Paris, France" style="width:30%"></a>
+                            <a href="#popupPhotoLarge" class="showPopupPhoto" data-rel="popup" data-position-to="window" data-transition="fade"><img class="popphoto" src="https://farm7.staticflickr.com/6175/6176698785_7dee72237e_b.jpg" alt="Sydney, Australia" style="width:30%"></a>
+                        </div>
+
+                        <div data-role="popup" id="popupPhotoLarge" data-overlay-theme="b" data-theme="b" data-corners="false" data-tolerance="30,15">
+                            <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img class="popphoto" id="img-large-photo" src="" alt="">
+                        </div>
+
                     </li>
                     <li><a href="map.html">View Map</a></li>
                     <li><a href="promo.html">Promos</a></li>
@@ -81,11 +93,27 @@
             </div><!-- /footer -->
         </div>
 
+        <div data-role="page"  class="page-bg" id="branch-photo">
+            <div data-role="header" id="applicationHeader" data-theme="b" data-position="fixed" data-id="navStay">
+               <a href="#branch-screen" data-ajax="false" class="ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-home">Back </a>                  
+               <h1 class="ui-title page-title" role="heading" aria-level="1">HELLO WORLD</h1>
+            </div>
+            <div role="main" class="ui-content" data-position="fixed">
+
+
+            <div data-demo-html="true"> 
+                <a href="#popupParis" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-link"><img class="popphoto" src="https://farm2.staticflickr.com/1043/5186867718_06b2e9e551_b.jpg" alt="Paris, France" style="width:30%"></a>
+                <a href="#popupSydney" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-link"><img class="popphoto" src="https://farm7.staticflickr.com/6175/6176698785_7dee72237e_b.jpg" alt="Sydney, Australia" style="width:30%"></a>
+            </div>
+
+
+            </div>
+
+        </div>
+
       
         <script type="text/javascript" src="js/global.js"></script>
-        <script type="text/javascript" src="js/branch.js"></script>       
-        <script type="text/javascript">
+        <script type="text/javascript" src="js/branch.js"></script>    
 
-        </script>
     </body>
 </html>
