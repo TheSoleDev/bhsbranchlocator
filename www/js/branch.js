@@ -24,13 +24,15 @@ $( document ).on( "pagebeforeshow", "#branch-screen", function() {
     
             if($.inArray( tag, value.province) > -1){
                filtertext = filtertext + ' ' + value.branch_name;
+               console.log(filtertext);
             }
 
         });
 
         arr_str.push('<div data-role="collapsible" class="tag-item" data-filtertext="'+tag + ' ' + filtertext + '">');
             arr_str.push('<h3>'+tag+'</h3>');
-            arr_str.push('<ul data-role="listview" data-inset="false">');
+            arr_str.push('<ul data-role="listview"  data-inset="true">');
+
 
                 $.each(branch, function(key, value) {
 
