@@ -21,17 +21,17 @@ $( document ).on( "pagebeforeshow", "#branch-screen", function() {
         var filtertext = '';
 
         $.each(branch, function(key, value) {
-    
-            if($.inArray( tag, value.province) > -1){
+
+            if(value.province == tag){
                filtertext = filtertext + ' ' + value.branch_name;
-               console.log(filtertext);
+              // console.log(filtertext);
             }
 
         });
 
         arr_str.push('<div data-role="collapsible" class="tag-item" data-filtertext="'+tag + ' ' + filtertext + '">');
             arr_str.push('<h3>'+tag+'</h3>');
-            arr_str.push('<ul data-role="listview"  data-inset="true">');
+            arr_str.push('<ul data-role="listview"  data-inset="false">');
 
 
                 $.each(branch, function(key, value) {
@@ -39,7 +39,7 @@ $( document ).on( "pagebeforeshow", "#branch-screen", function() {
                     if( tag == value.province){
                         if(value.lat != null && value.long != null)
                         {
-                            arr_str.push('<li class="sub-item" data-filtertext="'+tag + ' ' + value.branch_name + '"><a href="#" class="showmap" data-position="'+value.lat + ',' + value.long+'" data-branch="'+value.branch_name+'" data-id="'+value.id+'">'+value.branch_name+'</a></li>');
+                            arr_str.push('<li class="sub-item" data-filtertext="'+tag + ' ' + value.branch_name + '"><a href="#" class="showDetails" data-position="'+value.lat + ',' + value.long+'" data-branch="'+value.branch_name+'" data-id="'+value.id+'">'+value.branch_name+'</a></li>');
                         }
                     }
                     
@@ -100,9 +100,7 @@ $('#branch-info').on('click','.showPopupPhoto',function(e) {
 });
 
 
-
-
-$('#branch-screen').on('click','.showmap',function(e) { 
+$('#branch-screen').on('click','.showDetails',function(e) { 
 
     if(localStorage.getItem("selected-branch") != '')
     {
@@ -115,10 +113,20 @@ $('#branch-screen').on('click','.showmap',function(e) {
     localStorage.setItem("selected-branch", $(this).data('branch'));
     localStorage.setItem("selected-branch-position", $(this).data('position'));
     localStorage.setItem("reference-page", 'branch.html');   
-    console.log('cccccccc' + localStorage.getItem("selected-branch"));
+
     window.location = "#branch-info";
 
 });
+
+
+
+$('#branch-info').on('click','.showmap',function(e) { 
+
+    localStorage.setItem("reference-page", 'branch.html');  
+    window.location = "map.html";
+
+});
+
 
 // $('#branch-screen').on('click','.showmap',function(e) { 
 

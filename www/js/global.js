@@ -21,7 +21,7 @@ $.each(json_data.branch, function(key, value) {
 	branch.push(value);
 });
 branch.sort();
-console.log(branch);
+// console.log(branch);
 
 $( document ).on( "pagebeforeshow", ".pageload", function() {
         
