@@ -1,12 +1,14 @@
 
-$( document ).on( "pagebeforeshow", "#promo-screen", function() {
+$( document ).on( "pageinit", "#promo-screen", function() {
 
-    var months = [ "January", "February", "March", "April", "May", "June", 
-               "July", "August", "September", "October", "November", "December" ];
+    var months = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
 
     //var selectedMonthName = months[$("#datepicker").datepicker('getDate').getMonth()];
-    
+
+    var branch_id = localStorage.getItem("selected-branch-id");
+
     var arr_str = [];
+
     var data_promo = json_data.branch_promo;
 
     data_promo.sort(function(a,b){
@@ -15,32 +17,44 @@ $( document ).on( "pagebeforeshow", "#promo-screen", function() {
                             return c-d;
                             });
 
-
     arr_str.push('<ul data-filter="true" data-role="listview" id="promo-list" data-input="#searchItem" data-inset="true">');
         
-        arr_str.push('<li data-role="list-divider">October<span class="ui-li-count">2</span></li>');
+        arr_str.push('<li data-role="list-divider">October</li>');
 
-    $.each(data_promo, function(key, value) {
+        $.each(data_promo, function(key, value) {
 
-        var branch_info = getBranchDetailsById(value.branch_id);
+            var arr_temp_str = [];
 
-        arr_str.push('<li data-filtertext="'+branch_info.branch_name+'">');
+                var branch_info = getBranchDetailsById(value.branch_id);
 
-            arr_str.push('<a href="#">');
+                arr_temp_str.push('<li data-filtertext="'+branch_info.branch_name+'">');
+
+                    arr_temp_str.push('<a href="#">');
+                    
+                    if(value.promo_photo_file != '')
+                    {
+                        arr_temp_str.push('<img src="'+value.promo_photo_file+'">');
+                    }
+
+                    arr_temp_str.push('<h2>'+value.promo_title+'</h2>');
+                    arr_temp_str.push('<p>'+value.promo_content+'<br/>');
+                    arr_temp_str.push('<strong>Branch name:</strong> '+branch_info.branch_name+'<br/>');
+                    arr_temp_str.push('<strong>Promo date:</strong> '+value.promo_date_from+' to '+value.promo_date_to+'</p></a>');            
+
+                arr_temp_str.push('</li>');
             
-            if(value.promo_photo_file != '')
+            if(branch_id != null)
             {
-                arr_str.push('<img src="'+value.promo_photo_file+'">');
+                if(branch_id == value.branch_id)
+                {
+                      arr_str.push(arr_temp_str.join('') );       
+                }
             }
-
-            arr_str.push('<h2>'+value.promo_title+'</h2>');
-            arr_str.push('<p>'+value.promo_content+'<br/>');
-            arr_str.push('<strong>Branch name:</strong> '+branch_info.branch_name+'<br/>');
-            arr_str.push('<strong>Promo date:</strong> '+value.promo_date_from+' to '+value.promo_date_to+'</p></a>');            
-            
-        arr_str.push('</li>');
-
-    });
+            else
+            {
+                arr_str.push(arr_temp_str.join('') );       
+            }
+        });
 
     arr_str.push('</ul>');
 
@@ -49,10 +63,11 @@ $( document ).on( "pagebeforeshow", "#promo-screen", function() {
 
 });
 
-
-$('#promo-screen').on('click','.showAll',function(e) { 
+$('#promo-screen').on('click','.showAllPromo',function(e) { 
     localStorage.removeItem('selected-branch');
-    window.location = "map.html";
+    localStorage.removeItem('selected-branch-id');    
+    
+    window.location = "promo.html";
 });
 
 $('#promo-screen').on('click','.btn-back',function(e) { 

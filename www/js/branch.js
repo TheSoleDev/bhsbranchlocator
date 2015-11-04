@@ -127,6 +127,12 @@ $('#branch-info').on('click','.showmap',function(e) {
 
 });
 
+$('#branch-info').on('click','.showPromo',function(e) { 
+
+    localStorage.setItem("reference-page", 'branch.html#branch-info');  
+
+    window.location = "promo.html";
+});
 
 // $('#branch-screen').on('click','.showmap',function(e) { 
 
