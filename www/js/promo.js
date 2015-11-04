@@ -1,5 +1,5 @@
 
-$( document ).on( "pageinit", "#promo-screen", function() {
+$( document ).on( "pagebeforeshow", "#promo-screen", function() {
 
     var months = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
 
