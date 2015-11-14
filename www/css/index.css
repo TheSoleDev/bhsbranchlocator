@@ -107,7 +107,7 @@ html body div.ui-slider-track.ui-body-a .ui-btn-active {
 }
 
 .dashboard-item a i{
-	font-size: 1.8em;
+	font-size: 3em;
 	display: block;
 	padding-bottom: 10px;
 	color: #1f3b08;
@@ -132,7 +132,9 @@ html body div.ui-slider-track.ui-body-a .ui-btn-active {
     font-size: 14px;
 }
 
-
+.ui-collapsible-heading-toggle{
+	padding-left: 60px;
+}
 
 /* First breakpoint at 576px */
 /* Inherits mobile styles, but floats containers to make columns */
@@ -144,8 +146,17 @@ html body div.ui-slider-track.ui-body-a .ui-btn-active {
 
 /* Second breakpoint at 800px */
 /* Adjusts column proportions, tweaks base H1 */
-@media all and (max-width: 768px){
-
+@media all and (max-width: 320px){
+	.dashboard-item a i{
+		font-size: 1.5em;
+		display: block;
+		padding-bottom: 10px;
+		color: #1f3b08;
+		text-shadow: 1px 2px 3px #666;
+	}
+	.dashboard-item a label{
+		font-size: 12px;
+	}
 }
 
 
