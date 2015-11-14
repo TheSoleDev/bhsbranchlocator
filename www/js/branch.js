@@ -81,6 +81,7 @@ $( document ).on( "pagebeforeshow", "#branch-info", function() {
 
     var data_photo = json_data.branch_photo;
 
+
     $.each(data_photo, function(key, value) {
 
         if( value.branch_id == branch_id){
@@ -88,7 +89,12 @@ $( document ).on( "pagebeforeshow", "#branch-info", function() {
         }
     });
 
-    $('#branch-photo-list').html(arr_str_photo.join(''));
+    var photoHeader = '';
+    if(arr_str_photo.length > 0)
+    {
+        photoHeader = '<h2>Photos</h2>';
+    } 
+    $('#branch-photo-list').html(photoHeader + arr_str_photo.join(''));
 
 });
 
