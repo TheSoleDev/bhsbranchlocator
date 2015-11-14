@@ -133,7 +133,9 @@ html body div.ui-slider-track.ui-body-a .ui-btn-active {
 }
 
 .ui-collapsible-heading-toggle{
-	padding-left: 60px;
+	padding-left: 40px;
+	font-size: 19px;
+    line-height: 2 !important;
 }
 
 /* First breakpoint at 576px */
@@ -157,6 +159,11 @@ html body div.ui-slider-track.ui-body-a .ui-btn-active {
 	.dashboard-item a label{
 		font-size: 12px;
 	}
+	.ui-collapsible-heading-toggle{
+	padding-left: 40px;
+	font-size: 15px;
+    line-height: 2 !important;
+}
 }
 
 
