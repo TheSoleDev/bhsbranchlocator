@@ -149,6 +149,9 @@ html body div.ui-slider-track.ui-body-a .ui-btn-active {
 /* Second breakpoint at 800px */
 /* Adjusts column proportions, tweaks base H1 */
 @media all and (max-width: 320px){
+	.page-title{
+		font-size: 15px !important;
+	}	
 	.dashboard-item a i{
 		font-size: 1.5em;
 		display: block;
@@ -159,11 +162,22 @@ html body div.ui-slider-track.ui-body-a .ui-btn-active {
 	.dashboard-item a label{
 		font-size: 12px;
 	}
+	.ui-header .ui-btn-left, .ui-header .ui-btn-right {
+	    font-size: 11.5px;
+	}	
 	.ui-collapsible-heading-toggle{
-	padding-left: 40px;
-	font-size: 15px;
-    line-height: 2 !important;
-}
+		padding-left: 40px;
+		font-size: 15px;
+	    line-height: 2 !important;
+	}
+	.footer-navbar-item i{
+		font-size: 14px;
+	}
+
+	.footer-navbar-item label{
+		font-size: 11px;
+
+	}	
 }
 
 
