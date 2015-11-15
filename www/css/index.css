@@ -1,3 +1,6 @@
+.no-padding{
+	padding: 0px !important;
+}
 .logo-container .logo{
  	width: 100%;
 }
@@ -25,12 +28,12 @@
         text-shadow: none!important;    font-weight: bold;	
 }
 .footer-navbar-item.ui-btn-active{
-	background-color: #1d1d1d !important;
-    border-color: #1b1b1b !important;
+	background-color: #ffffff !important;
+    border-color: #ffffff !important;
 }
 .logo-container{
 margin:0 auto;
-width: 30%;
+width: 40%;
 }
 #applicationHeader{
 	    background-color: #84cf00 ;
@@ -39,11 +42,24 @@ width: 30%;
     padding-top: 5px;
 }
 .ui-header-fixed .ui-btn-left, .ui-header-fixed .ui-btn-right{
-	margin-top: 5px;
+	margin-top: 3px;
+	font-size: 13px;
+		line-height: 1.5;
 }
 .ui-input-search{
 	min-height: 45px;
 }
+
+.footer-navbar-item{
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#9dd53a+0,a1d54f+50,80c217+51,7cbc0a+100;Green+Gloss+%231 */
+background: #9dd53a; /* Old browsers */
+background: -moz-linear-gradient(top,  #9dd53a 0%, #a1d54f 50%, #80c217 51%, #7cbc0a 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #9dd53a 0%,#a1d54f 50%,#80c217 51%,#7cbc0a 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #9dd53a 0%,#a1d54f 50%,#80c217 51%,#7cbc0a 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9dd53a', endColorstr='#7cbc0a',GradientType=0 ); /* IE6-9 */
+border: 1px solid #ff0000;
+}
+
 
 #branch-details{
 	margin: 0px;
@@ -114,11 +130,15 @@ html body div.ui-slider-track.ui-body-a .ui-btn-active {
 }
 
 .dashboard-item a i{
-	font-size: 3em;
+	font-size: 2em;
 	display: block;
 	padding-bottom: 10px;
 	color: #1f3b08;
 	text-shadow: 1px 2px 3px #666;
+}
+
+.dashboard-item a.ui-link{
+	margin: 0px;
 }
 .footer-navbar-item i{
 	font-size: 1.8em;
@@ -172,9 +192,12 @@ html body div.ui-slider-track.ui-body-a .ui-btn-active {
 	.dashboard-item a label{
 		font-size: 12px;
 	}
-	.ui-header .ui-btn-left, .ui-header .ui-btn-right {
-	    font-size: 11.5px;
-	}	
+
+	.ui-header-fixed .ui-btn-left, .ui-header-fixed .ui-btn-right{
+	margin-top: 3px;
+	font-size: 12px;
+	line-height: 1.7;
+}
 	.ui-collapsible-heading-toggle{
 		padding-left: 40px;
 		font-size: 15px;
