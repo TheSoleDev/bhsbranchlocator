@@ -56,9 +56,6 @@ width: 40%;
 	font-size: 13px;
 		line-height: 1.2;
 }
-.ui-input-search{
-	min-height: 45px;
-}
 
 .footer-navbar-item-gradient{
 /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#9dd53a+0,a1d54f+50,80c217+51,7cbc0a+100;Green+Gloss+%231 */
@@ -206,7 +203,7 @@ html body div.ui-slider-track.ui-body-a .ui-btn-active {
 	.ui-header-fixed .ui-btn-left, .ui-header-fixed .ui-btn-right{
 	margin-top: 3px;
 	font-size: 12px;
-	line-height: 1.7;
+
 }
 	.ui-collapsible-heading-toggle{
 		padding-left: 40px;
