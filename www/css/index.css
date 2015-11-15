@@ -175,6 +175,23 @@ html body div.ui-slider-track.ui-body-a .ui-btn-active {
 	min-height: 3em;
 	font-size: 14px !important;
 }
+
+
+
+.about-container{
+
+	background-color: #ffffff;
+	min-width: 100%;
+	min-height: 450px;
+
+}
+.text-content{
+		padding: 0px 25px 25px;
+	font-size: 12px;
+	text-align: justify;
+}
+
+
 /* First breakpoint at 576px */
 /* Inherits mobile styles, but floats containers to make columns */
 @media all and (min-width: 769px){

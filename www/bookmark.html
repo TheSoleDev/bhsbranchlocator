@@ -25,19 +25,39 @@
                <a href="#" data-ajax="false" class="showAllPromo ui-btn-right ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-right ui-icon-grid"> All</a>               
             </div>
             <div role="main" class="ui-content" data-position="fixed">
-                <form>
-                    <input data-type="search" id="searchItem" data-inset="false">
-                </form>
-                <div id="promo-container"></div>
+
+                <ul data-role="listview" data-filter="true" data-filter-placeholder="Search branch..." data-split-icon="gear" data-split-theme="a" data-inset="true">
+                    <li><a href="#">
+                        <h2>Broken Bells</h2>
+                        </a>
+                    <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a>
+                    </li>
+                    <li><a href="#">
+                            <h2>Warning</h2>
+                        </a>
+                        <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a>
+                    </li>
+                    <li><a href="#">
+                            <h2>Wolfgang Amadeus Phoenix</h2>
+                        </a>
+                        <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a>
+                    </li>
+                </ul>
+
+                <div data-role="popup" id="purchase" data-theme="a" data-overlay-theme="b" class="ui-content" style="max-width:340px; ">
+                    <a href="index.html" data-rel="back" class="ui-shadow ui-btn ui-corner-all ui-icon-carat-r ui-btn-icon-left ">View Branch Info</a>
+                    <a href="index.html" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-icon-delete ui-btn-icon-left">Delete this Item</a>
+                </div>
+
             </div>
             <div data-role="footer" style="overflow:hidden;" data-position="fixed" data-tap-toggle="false">
                 <div data-role="navbar" id="footer-nav-item">
                     <ul>
                         <li><a href="branch.html" data-ajax="false" class="footer-navbar-item"><i class="fa fa-building"></i><label>Branch</label></a></li>
                         <li><a href="map.html" data-ajax="false" class="footer-navbar-item"><i class="fa fa-map-marker"></i><label>Map</label></a></li>
-                        <li><a href="promo.html" class="ui-btn-active footer-navbar-item"><i class="fa fa-gift"></i><label>Promos</label></a></li>
+                        <li><a href="promo.html" class="footer-navbar-item"><i class="fa fa-gift"></i><label>Promos</label></a></li>
                         <li><a href="#" class="footer-navbar-item"><i class="fa fa-book"></i><label>Reserve</label></a></li>      
-                        <li><a href="bookmark.html" class="footer-navbar-item"><i class="fa fa-bookmark"></i><label>Bookmark</label></a></li>
+                        <li><a href="bookmark.html" class="ui-btn-active footer-navbar-item"><i class="fa fa-bookmark"></i><label>Bookmark</label></a></li>
                     </ul>
                 </div><!-- /navbar -->
                 <div  class="footer-text" >
@@ -45,29 +65,7 @@
                 </div>                
             </div><!-- /footer -->
         </div>
-        <div data-role="page"  class="page-bg" id="promo-details">
-            <div data-role="header" id="applicationHeader" data-theme="b" data-position="fixed" data-tap-toggle="false" data-id="navStay">
-               <a href="index.html" data-ajax="false" class="ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-home">Back </a>                  
-               <h1 class="ui-title page-title" role="heading" aria-level="1">Hello World</h1>
-            </div>
-            <div role="main" class="ui-content" data-position="fixed">
-                <form>
-                    <input data-type="search" id="searchItem" data-inset="false">
-                </form>
-                <div id="promo-container"></div>
-            </div>
-            <div data-role="footer" style="overflow:hidden;" data-position="fixed" data-tap-toggle="false">
-                <div data-role="navbar" id="footer-nav-item">
-                    <ul>
-                        <li><a href="branch.html" data-ajax="false" class="footer-navbar-item"><i class="fa fa-building"></i><label>Branch</label></a></li>
-                        <li><a href="map.html" data-ajax="false" class="footer-navbar-item"><i class="fa fa-map-marker"></i><label>Map</label></a></li>
-                        <li><a href="promo.html" class="ui-btn-active footer-navbar-item"><i class="fa fa-gift"></i><label>Promos</label></a></li>
-                        <li><a href="#" class="footer-navbar-item"><i class="fa fa-book"></i><label>Reserve</label></a></li>      
-                        <li><a href="bookmark.html" class="footer-navbar-item"><i class="fa fa-bookmark"></i><label>Bookmark</label></a></li>
-                    </ul>
-                </div><!-- /navbar -->
-            </div><!-- /footer -->
-        </div>        
+    
 
         <script type="text/javascript" src="js/global.js"></script>
         <script type="text/javascript" src="js/promo.js"></script>    
