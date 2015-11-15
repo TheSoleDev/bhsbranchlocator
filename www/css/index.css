@@ -138,7 +138,8 @@ html body div.ui-slider-track.ui-body-a .ui-btn-active {
     line-height: 2 !important;
 }
 .ui-input-text input, .ui-input-search input{
-	min-height: 2.5em;
+	min-height: 3em;
+	font-size: 14px !important;
 }
 /* First breakpoint at 576px */
 /* Inherits mobile styles, but floats containers to make columns */
