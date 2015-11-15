@@ -35,8 +35,15 @@ width: 30%;
 #applicationHeader{
 	    background-color: #84cf00 ;
     border-color: #517f00 ;
+    min-height: 45px;
+    padding-top: 5px;
 }
-
+.ui-header-fixed .ui-btn-left, .ui-header-fixed .ui-btn-right{
+	margin-top: 5px;
+}
+.ui-input-search{
+	min-height: 45px;
+}
 
 #branch-details{
 	margin: 0px;
