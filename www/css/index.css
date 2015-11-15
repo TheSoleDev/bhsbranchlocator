@@ -176,8 +176,6 @@ html body div.ui-slider-track.ui-body-a .ui-btn-active {
 	font-size: 14px !important;
 }
 
-
-
 .about-container{
 
 	background-color: #ffffff;
@@ -187,6 +185,18 @@ html body div.ui-slider-track.ui-body-a .ui-btn-active {
 }
 .text-content{
 		padding: 0px 25px 25px;
+	font-size: 12px;
+	text-align: justify;
+}
+
+.contact-container{
+	background-color: #ffffff;
+	min-width: 100%;
+	min-height: 450px;
+
+}
+.contact-container .text-content{
+		padding:  10px 25px 25px;
 	font-size: 12px;
 	text-align: justify;
 }

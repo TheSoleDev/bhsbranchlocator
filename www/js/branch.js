@@ -14,7 +14,7 @@ $( document ).on( "pagebeforeshow", "#branch-screen", function() {
     // $('#footer-nav-item').html(arr_str.join(''))).listview('refresh');
 
 
-
+    $('#brachlist').html('');
 
     $.each(province, function(i, tag) {
 

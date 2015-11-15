@@ -24,19 +24,48 @@
                <h1 class="ui-title page-title" role="heading" aria-level="1">Banahaw Heals Spa</h1>
             </div>
             <div role="main" class="ui-content" data-position="fixed">
-                <div class="about-container">
-                    <div class="logo-container">
-                        <img src="img/seal.png" class="logo"/>
-                    </div>            
+                <div class="contact-container">
+                             
                     <div class="text-content">
+                        <h2>CONTACT US</h2>
+                        <p><strong>For any inquiries, comments, and suggestions.</strong></p>
+                        <br />
+                        <form>
                         <p>
-                            Banahaw Heals Spa started with the founder’s gifted talent and inherent skills, incorporated with personal research and studies on the nature of spa services in line with body massage. His constant philosophical thoughts and ideas lead to constrain some practices with regard to rendering professional services in order to cater with the need to relieve client’s body stress, and in line with the true definition of touch therapy as an alternative medicine. It is the founder’s passion and devotion to this career that brought him awareness of a mystical mission, a manifestation of Mt. Banahaw’s healing nature, through massage and touch therapy.
+                            <label for="contact-type" class="select">Contacting us about?</label>
+                            <select name="contact-type" id="contact-type">
+                                <option value="Inquiries">Inquiries</option>
+                                <option value="Suggestions">Suggestions</option>
+                                <option value="Complaints">Complaints</option>
+                                <option value="Franchise">Franchise</option>
+                            </select>
+                        </p>
+                        <p>
+                            <label for="txt_branch_name">Branch Name:</label>
+                            <input type="text" name="txt_branch_name" id="txt_branch_name" value="">
+                        </p>                        
+                        <p>
+                            <label for="txt_fullname">Full name:</label>
+                            <input type="text" name="txt_fullname" id="txt_fullname" value="">
+                        </p>
+                        <p>
+                            <label for="txt_email">Email address:</label>
+                            <input type="email" name="txt_email" id="txt_email" value="">
+                        </p>                        
+                        <p>
+                            <label for="mobile_no">Mobile No.:</label>
+                            <input type="tel" name="mobile_no" id="mobile_no" value="">
+                        </p>
+                        <p>
+                            <label for="txt_message">Message:</label>
+                            <textarea cols="40" rows="10" name="txt_message" id="txt_message"></textarea>
                         </p>
                         <br />
                         <p>
-                            <strong>For any inquiries, comments, and suggestions.</strong>
-                            <a href="contact.html" data-ajax="false" class="ui-btn ui-shadow ui-corner-all ui-btn-b">Contact Us</a>
+                            
+                            <button type="submit" class="ui-btn ui-shadow ui-corner-all ui-btn-b">Submit</button>
                         </p>
+                        </form>
                     </div>        
                 </div>
             </div>
