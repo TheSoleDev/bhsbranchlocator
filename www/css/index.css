@@ -38,8 +38,8 @@
     text-shadow: none!important;    font-weight: bold;	
 }
 .footer-navbar-item.ui-btn-active{
-	background-color: #ffffff !important;
-    border-color: #ffffff !important;
+	background-color: #1d1d1d !important;
+    border-color: #1b1b1b !important;
 }
 .logo-container{
 margin:0 auto;
@@ -60,7 +60,7 @@ width: 40%;
 	min-height: 45px;
 }
 
-.footer-navbar-item{
+.footer-navbar-item-gradient{
 /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#9dd53a+0,a1d54f+50,80c217+51,7cbc0a+100;Green+Gloss+%231 */
 background: #9dd53a; /* Old browsers */
 background: -moz-linear-gradient(top,  #9dd53a 0%, #a1d54f 50%, #80c217 51%, #7cbc0a 100%); /* FF3.6-15 */
