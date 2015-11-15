@@ -27,6 +27,16 @@
     border-color: #1b1b1b !important;
         text-shadow: none!important;    font-weight: bold;	
 }
+.footer-text{
+	padding: 5px;
+	text-align: center;
+	font-size: 12px;
+	overflow:hidden;
+	color: #ffffff!important;
+	background-color: #1d1d1d !important;
+    border-color: #1b1b1b !important;
+    text-shadow: none!important;    font-weight: bold;	
+}
 .footer-navbar-item.ui-btn-active{
 	background-color: #ffffff !important;
     border-color: #ffffff !important;
