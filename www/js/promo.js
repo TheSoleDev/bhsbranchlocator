@@ -112,6 +112,18 @@ $( document ).on( "pagebeforeshow", "#promo-info", function() {
     $('#promo-details').html(promo_arr_str.join(''));
 
 
+    if(localStorage.getItem("selected-branch") != '')
+    {
+        localStorage.removeItem('selected-branch');
+        localStorage.removeItem('selected-branch-position');
+        localStorage.removeItem('reference-page');
+    }
+
+    localStorage.setItem("selected-branch-id", branch_details.id);
+    localStorage.setItem("selected-branch", branch_details.branch_name);
+    localStorage.setItem("selected-branch-position", branch_details.lat + ',' + branch_details.long);
+    localStorage.setItem("reference-page", 'promo.html');   
+
     var arr_str = [];
 
     if(branch_details.branch_name != null)     arr_str.push('<li class="main"><label>'+branch_details.branch_name+'</label></li>');
@@ -124,7 +136,6 @@ $( document ).on( "pagebeforeshow", "#promo-info", function() {
     $('#branch-details').html(arr_str.join(''));
 
 });
-
 
 
 $('#promo-screen').on('click','.showAllPromo',function(e) { 
@@ -156,6 +167,13 @@ $('#promo-info').on('click','.btn-back',function(e) {
     window.location = backLink;
 });
 
+$('#promo-info').on('click','.showmap',function(e) { 
+
+    localStorage.setItem("reference-page", 'promo.html');  
+    localStorage.setItem("reference-page", 'promo.html#promo-info');  
+    window.location = "map.html";
+
+});
 
 $('#promo-screen').on('click','.view-promo-details',function(e) { 
     if(localStorage.getItem("selected-promo-id") != '')
