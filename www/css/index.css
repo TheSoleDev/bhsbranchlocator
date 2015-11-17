@@ -9,6 +9,11 @@
 	margin: 0 10% !important;
 	font-size: 1em !important;
 }
+
+.inner-title{
+	text-shadow: 1px 2px 3px #ffffff;
+}
+
 .page-bg{
 	background: url('../img/bg-medium-screen.png') #95e705 top repeat-x;
 	height: 100%;
@@ -108,9 +113,12 @@ border: 1px solid #ff0000;
 #promo-details li{
 	margin: 0px;
 	padding:0px;
-
-
 }
+
+#promo-details li{
+	line-height: 1.7;
+}
+
 #promo-details li.main{
 	margin: 10px 0 15px 0;
 	border-bottom: 1px solid #cccccc;

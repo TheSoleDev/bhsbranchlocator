@@ -100,7 +100,7 @@ $( document ).on( "pagebeforeshow", "#promo-info", function() {
 
     var promo_arr_str = [];
 
-        promo_arr_str.push('<li data-filtertext="'+promo_details.branch_name+'">');
+        promo_arr_str.push('<li>');
 
             promo_arr_str.push('<h2>'+promo_details.promo_title+'</h2>');
             promo_arr_str.push('<p>'+promo_details.promo_content+'<br/>');
@@ -135,7 +135,7 @@ $('#promo-screen').on('click','.showAllPromo',function(e) {
 });
 
 $('#promo-screen').on('click','.btn-back',function(e) { 
-    
+
     var backLink = 'index.html';
     if(localStorage.getItem("reference-page") != null)
     {    
@@ -145,6 +145,16 @@ $('#promo-screen').on('click','.btn-back',function(e) {
     window.location = backLink;
 });
 
+$('#promo-info').on('click','.btn-back',function(e) { 
+
+    var backLink = 'index.html';
+    if(localStorage.getItem("reference-page") != null)
+    {    
+        backLink = localStorage.getItem("reference-page");
+        localStorage.removeItem('reference-page');
+    }
+    window.location = backLink;
+});
 
 
 $('#promo-screen').on('click','.view-promo-details',function(e) { 
