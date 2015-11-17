@@ -82,7 +82,7 @@ $( document ).on( "pagebeforeshow", "#promo-screen", function() {
 });
 
 
-$( document ).on( "pagebeforeshow", "#promo-details", function() {
+$( document ).on( "pagebeforeshow", "#promo-info", function() {
   
     var promo_id = localStorage.getItem("selected-promo-id");
     var promo_month = localStorage.getItem("selected-month");    
@@ -104,8 +104,7 @@ $( document ).on( "pagebeforeshow", "#promo-details", function() {
 
             promo_arr_str.push('<h2>'+promo_details.promo_title+'</h2>');
             promo_arr_str.push('<p>'+promo_details.promo_content+'<br/>');
-            promo_arr_str.push('<strong>Branch name:</strong> '+branch_details.branch_name+'<br/>');
-            promo_arr_str.push('<strong>Promo date:</strong> '+promo_details.promo_date_from+' to '+promo_details.promo_date_to+'</p>');            
+            promo_arr_str.push('<strong>Promo date:</strong> '+promo_details.promo_date_from+' <strong>to</strong> '+promo_details.promo_date_to+'</p>');            
 
         promo_arr_str.push('</li>');
 
@@ -149,7 +148,6 @@ $('#promo-screen').on('click','.btn-back',function(e) {
 
 
 $('#promo-screen').on('click','.view-promo-details',function(e) { 
-alert('fffffffff');
     if(localStorage.getItem("selected-promo-id") != '')
     {
         localStorage.removeItem('selected-promo-id');

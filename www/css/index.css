@@ -96,6 +96,41 @@ border: 1px solid #ff0000;
 	white-space:pre-wrap;
 }
 
+
+
+#promo-details{
+	margin: 0px;
+	padding:0px;
+	list-style: none !important;
+
+}
+
+#promo-details li{
+	margin: 0px;
+	padding:0px;
+
+
+}
+#promo-details li.main{
+	margin: 10px 0 15px 0;
+	border-bottom: 1px solid #cccccc;
+}
+
+#promo-details li label{
+	font-size: 14px;
+	font-weight: bold;
+}
+#promo-details li div.info{
+	padding-left: 15px;
+	font-size: 14px;
+	white-space:pre-wrap;
+}
+
+#promo-photo img{
+	width: 100%;
+}
+
+
 /** General */
 .content { padding:1.5em; margin:0 0 1.5em; }
 .dark { background:#2a3333; }
