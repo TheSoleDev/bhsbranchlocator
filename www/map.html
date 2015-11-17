@@ -20,10 +20,35 @@
     <body>
 
         <div data-role="page"  class="page-bg" id="map-screen">
+
+    <div data-role="panel" data-display="overlay" id="menu-panel" class="ui-panel ui-panel-position-right ui-panel-display-reveal ui-body-inherit ui-panel-animate ui-panel-open">
+
+        <div class="ui-panel-inner">
+            <a href="#" data-rel="close" class="ui-btn ui-btn-icon-right ui-icon-delete">Close</a>
+            <fieldset data-role="controlgroup">
+                <input type="radio" name="radio-choice-1" id="radio-choice-1" value="choice-1" checked="checked">
+                <label for="radio-choice-1">Show Selected Branch</label>
+                <input type="radio" name="radio-choice-1" id="radio-choice-2" value="choice-2">
+                <label for="radio-choice-2">Show All Branch</label>
+                <input type="radio" name="radio-choice-1" id="radio-choice-3" value="choice-3">
+                <label for="radio-choice-3">Show 2Km near me</label>
+            </fieldset> 
+
+            <!-- <ul data-role="listview" class="ui-listview">
+                <li data-icon="delete" class="ui-first-child"><a href="#" data-rel="close" class="ui-btn ui-btn-icon-right ui-icon-delete">Close</a></li>
+                <li data-icon="delete" class="ui-first-child"><a href="#" data-rel="close" class="ui-btn ui-btn-icon-right ui-icon-delete">Show Selected Branch</a></li>  
+                <li data-icon="delete" class="ui-first-child"><a href="#" data-rel="close" class="ui-btn ui-btn-icon-right ui-icon-delete">Show All Branch</a></li>
+                <li data-icon="delete" class="ui-first-child"><a href="#" data-rel="close" class="ui-btn ui-btn-icon-right ui-icon-delete">Show 2Km near me</a></li>                
+            </ul> -->
+        </div>
+
+    </div>
+
             <div data-role="header" id="applicationHeader" data-theme="b" data-position="fixed" data-tap-toggle="false" data-id="navStay">
                <a href="#" data-ajax="false" class="btn-back ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-arrow-l"> Back</a>               
                <h1 class="ui-title page-title" role="heading" aria-level="1">Banahaw Heals Spa</h1>
-               <a href="#" data-ajax="false" class="showAll ui-btn-right ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-right ui-icon-grid"> All</a>
+               <!-- <a href="#" data-ajax="false" class="showAll ui-btn-right ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-right ui-icon-grid"> All</a> -->
+               <a href="#menu-panel" data-icon="bars" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-btn-right ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-right ui-icon-grid" data-role="button" role="button">Menu</a>
             </div>
             <div role="main" class="" data-position="fixed">
 
