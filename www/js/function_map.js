@@ -49,9 +49,20 @@ $( document ).on( "pagebeforeshow", "#map-screen", function() {
             // // [-] THIS IS FOR THE NEARBY FEATURES
             
             var arr_option = [];
+            var arr_details_str = [];
+            var branch_address = '';
             $.each(branch, function(key, value) {
 
-                arr_option = {'icon': img_marker, 'tags':Array(value.province), 'bound':true, 'position': value.lat + ',' + value.long, 'title': value.branch_name};
+                arr_details_str = [];
+                arr_details_str.push('<strong>'+value.branch_name + '</strong><br />' + value.address);
+
+                if(value.tel_no_1 != null)        arr_details_str.push('<strong>Telephone No.:</strong>'+value.tel_no_1);
+                if(value.mobile_no_1 != null)     arr_details_str.push('<strong>Mobile No.:</strong>'+value.mobile_no_1);
+                if(value.email_add != null)       arr_details_str.push('<strong>Email:</strong>'+value.email_add);
+                if(value.fb_url != null)          arr_details_str.push('<strong>Facebook:</strong>'+value.fb_url);
+
+                branch_address = arr_details_str.join('<br />');
+                arr_option = {'icon': img_marker, 'tags':Array(value.province), 'bound':true, 'position': value.lat + ',' + value.long, 'title': branch_address};
 
                 if(selectedBranch != '')
                 {
