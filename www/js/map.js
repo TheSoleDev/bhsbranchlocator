@@ -31,3 +31,7 @@ $('#map-screen').on('click','.btn-back',function(e) {
     }
     window.location = backLink;
 });
+
+$('#map-screen').on('change',".rb-menu-map",function(e) { 
+    alert($("input[name*=radio-choice-]:checked").val());
+});
